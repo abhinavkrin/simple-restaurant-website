@@ -4,13 +4,16 @@
   "description": "This is a website for Ristorante Con Fusion",
   "main": "index.html",
   "scripts": {
-    "start": "npm run lite",
+    "start": "npm run server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lite": "lite-server"
+    "server": "browser-sync -s -w"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "lite-server": "^2.3.0"
+  "devDependencies": {},
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
   }
 }
