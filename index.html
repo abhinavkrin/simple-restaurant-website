@@ -32,9 +32,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-item">
-                    <a data-toggle="modal" data-target="#loginModal">
-                        <button class="btn btn-info"><span class="fa fa-sign-in"></span> Login</button>
-                    </a>
+                    <button class="btn btn-info" id="loginButton"><span class="fa fa-sign-in"></span> Login</button>
                 </span>
             </div>
         </div>
@@ -44,7 +42,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="close modal-close-button" data-dismiss="modal">
                         &times;
                     </button>
                 </div>
@@ -81,7 +79,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="close modal-close-button" data-dismiss="modal">
                         &times;
                     </button>
                 </div>
@@ -163,7 +161,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center d-flex justify-content-center mt-3 mt-sm-0">
-                    <button data-toggle="modal" data-target="#reserveModal" type="button" class="btn btn-warning" style="color: white;">Reserve a Table</button>
+                    <button id="reserveButton" type="button" class="btn btn-warning" style="color: white;">Reserve a Table</button>
                 </div>
             </div>
         </div>
@@ -308,6 +306,12 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function(){
+            $('#loginButton').click(function(){
+                $('#loginModal').modal();
+            });
+            $('#reserveButton').click(function(){
+                $('#reserveModal').modal();
+            });
             $('#myCarousel').carousel({interval: 2500});
             $('#carouselButton').click(function(){ 
                 if($('#carouselButton').children('span').hasClass('fa-pause')){
